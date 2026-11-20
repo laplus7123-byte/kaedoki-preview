@@ -299,6 +299,15 @@ a.kaedoki-guide-card:focus-visible .kaedoki-a {
   object-fit: contain;
 }
 
+/* 下部固定メニューは使わない */
+#fix_bottom_menu {
+  display: none !important;
+}
+
+body.has-fix-btm {
+  padding-bottom: 0 !important;
+}
+
 /* FV直下の大きな空きを消す（SWELL既定の content 上余白） */
 .home.top #content.l-content,
 .home #content.l-content,
