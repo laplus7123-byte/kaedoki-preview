@@ -1,0 +1,759 @@
+@charset "UTF-8";
+/*
+    Template: swell
+    Theme Name: SWELL CHILD
+    Theme URI: https://swell-theme.com/
+    Description: カエドキッ用 SWELL 子テーマ（ほっとクレジット / 設計書配色）
+    Version: 1.1.0
+    Author: La plus
+    Author URI: https://laplusgroup.com/
+
+    License: GNU General Public License
+    License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+/* ===== カエドキッ ブランドカラー（設計書） ===== */
+:root {
+  --color_main: #c2500a !important;
+  --color_htag: #c2500a !important;
+  --color_text: #3b241a !important;
+  --color_bg: #fff4df !important;
+  --color_main_thin: rgba(194, 80, 10, 0.06) !important;
+  --color_main_dark: #9a3e08 !important;
+  --kaedoki-yellow: #ffc83d;
+  --kaedoki-kinari: #fff4df;
+  --kaedoki-soft: #f7e7cf;
+  --kaedoki-line: #edd9bf;
+  --kaedoki-muted: #6e5648;
+}
+
+body {
+  color: var(--color_text);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* サイト全体背景（2026-11-20 軽量WebP・PC/SP切替） */
+#body_wrap {
+  background-color: #fef8ef !important;
+  background-image: url("assets/backgrounds/kaedoki-site-background-pc-hq-20261120.webp") !important;
+  background-position: center top !important;
+  background-size: 100% auto !important;
+  background-repeat: no-repeat !important;
+}
+
+@media screen and (max-width: 959px) {
+  #body_wrap {
+    background-image: url("assets/backgrounds/kaedoki-site-background-sp-hq-20261120.webp") !important;
+  }
+}
+
+/* ヘッダーバー（カナエルと同じ：キャッチコピー＋アイコン） */
+.l-header__bar {
+  background: var(--color_main) !important;
+  color: #fff !important;
+}
+
+.l-header__bar .c-catchphrase {
+  color: #fff !important;
+  font-weight: 400;
+}
+
+/* ロゴ周りの余白 */
+.l-header__logo {
+  letter-spacing: 0.04em;
+}
+
+/* ヒーロー */
+.kaedoki-catch {
+  font-family: "M PLUS Rounded 1c", "Hiragino Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color_text) !important;
+  font-size: clamp(1.35rem, 3.6vw, 2.05rem) !important;
+}
+
+.kaedoki-mark {
+  background: var(--kaedoki-yellow);
+  padding: 0 0.12em;
+}
+
+.kaedoki-lead {
+  color: var(--kaedoki-muted);
+  font-size: 0.95rem;
+  max-width: 32em;
+}
+
+.kaedoki-kaede-placeholder {
+  width: min(180px, 42vw);
+  height: min(180px, 42vw);
+  margin: 0 auto !important;
+  border-radius: 50%;
+  background: var(--kaedoki-soft);
+  border: 2px solid var(--kaedoki-yellow);
+  display: grid !important;
+  place-items: center;
+  text-align: center;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  color: var(--color_main);
+  line-height: 1.35;
+}
+
+.kaedoki-speech {
+  display: inline-block;
+  margin: 10px auto 0 !important;
+  background: #fff;
+  border: 1px solid var(--kaedoki-line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+/* かえで案内 */
+.kaedoki-guide-intro {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px;
+  margin: 8px 0 18px;
+}
+
+.kaedoki-mini {
+  width: 64px;
+  height: 64px;
+  margin: 0 !important;
+  border-radius: 50%;
+  background: var(--kaedoki-soft);
+  border: 2px solid var(--kaedoki-yellow);
+  display: grid !important;
+  place-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color_main);
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  flex-shrink: 0;
+}
+
+.kaedoki-mini-img,
+.kaedoki-mini-img img {
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.kaedoki-mini-img img {
+  border: 2px solid var(--kaedoki-yellow);
+}
+
+.kaedoki-bubble,
+p.kaedoki-bubble {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 !important;
+  background: var(--kaedoki-kinari);
+  border: 0 !important;
+  border-radius: 14px;
+  /* 游ゴシック等は下側に余白が付きやすいので光学補正 */
+  padding: 13px 18px 9px !important;
+  min-height: 48px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.25 !important;
+  box-sizing: border-box;
+}
+
+.kaedoki-guide {
+  margin-bottom: 1.5rem;
+}
+
+/* スマホでも2列（PCと同じレイアウト） */
+.kaedoki-guide-grid.wp-block-columns {
+  flex-wrap: nowrap !important;
+  align-items: stretch;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.kaedoki-guide-grid.wp-block-columns:last-of-type {
+  margin-bottom: 0;
+}
+
+.kaedoki-guide-grid > .wp-block-column {
+  flex-basis: 0 !important;
+  flex-grow: 1 !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+a.kaedoki-guide-card {
+  display: block;
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--color_main);
+  border-radius: 10px;
+  padding: 16px 18px;
+  height: 100%;
+  text-decoration: none !important;
+  color: inherit;
+  box-sizing: border-box;
+  overflow: visible;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+a.kaedoki-guide-card:hover,
+a.kaedoki-guide-card:focus-visible {
+  background: var(--color_bg, #fff4df);
+  border-color: var(--color_main);
+  outline: none;
+}
+
+a.kaedoki-guide-card:focus-visible {
+  outline: 2px solid var(--color_main);
+  outline-offset: 2px;
+}
+
+.kaedoki-guide-card__inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.kaedoki-guide-card__body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.kaedoki-guide-card__illust {
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  margin-right: -10px;
+}
+
+.kaedoki-guide-card__illust img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+}
+
+.kaedoki-guide-card .kaedoki-q {
+  display: block;
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color_text);
+  line-height: 1.45;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.kaedoki-guide-card .kaedoki-a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff !important;
+  background: var(--color_main);
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+.kaedoki-guide-card__arrow {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
+a.kaedoki-guide-card:hover .kaedoki-a,
+a.kaedoki-guide-card:focus-visible .kaedoki-a {
+  background: #9e3f08;
+}
+
+@media (max-width: 767px) {
+  .kaedoki-guide-grid.wp-block-columns {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  a.kaedoki-guide-card {
+    padding: 10px 8px 10px 10px;
+  }
+
+  .kaedoki-guide-card__inner {
+    gap: 4px;
+  }
+
+  .kaedoki-guide-card__body {
+    gap: 8px;
+  }
+
+  .kaedoki-guide-card__illust {
+    flex-basis: 72px;
+    width: 72px;
+    height: 88px;
+    margin-right: -12px;
+    align-self: flex-end;
+  }
+
+  .kaedoki-guide-card__illust img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .kaedoki-guide-card .kaedoki-q {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .kaedoki-guide-card .kaedoki-a {
+    font-size: 0.68rem;
+    padding: 6px 8px;
+    gap: 3px;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 360px) {
+  .kaedoki-guide-card__illust {
+    flex-basis: 64px;
+    width: 64px;
+    height: 80px;
+  }
+
+  .kaedoki-guide-card__illust img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .kaedoki-guide-card .kaedoki-q {
+    font-size: 0.72rem;
+  }
+
+  .kaedoki-guide-card .kaedoki-a {
+    font-size: 0.62rem;
+    padding: 5px 6px;
+  }
+}
+
+.kaedoki-rank-head {
+  margin-bottom: 1.25rem;
+}
+
+.kaedoki-rank-head h2,
+.kaedoki-rank-head .wp-block-heading {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: 100%;
+  margin: 4px 0 0 !important;
+  padding: 0.55em 1.2em !important;
+  background: var(--color_main) !important;
+  color: #fff !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 1px solid var(--color_main);
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+
+.kaedoki-meta {
+  margin: 0 !important;
+  color: var(--kaedoki-muted);
+  font-size: 0.9rem;
+}
+
+.kaedoki-note {
+  color: var(--kaedoki-muted);
+  font-size: 0.85rem;
+  margin: 0.75rem 0 1rem !important;
+}
+
+/* 注目ランキング：アイキャッチ全表示＋順位バッジ */
+.kaedoki-rank-list .p-postList {
+  display: grid;
+  gap: 12px;
+}
+
+.kaedoki-rank-list .p-postList__item {
+  position: relative;
+  margin: 0 !important;
+  background: #fff;
+  border: 1px solid var(--kaedoki-line);
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.kaedoki-rank-list .p-postList__link {
+  display: grid !important;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px 12px 12px !important;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.kaedoki-rank-list .p-postList__thumb {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: 0 !important;
+  background: #fff4df;
+  border-radius: 6px;
+  overflow: hidden;
+  flex: 0 0 220px;
+}
+
+.kaedoki-rank-list .c-postThumb__figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.kaedoki-rank-list .c-postThumb__img,
+.kaedoki-rank-list .p-postList__thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.kaedoki-rank-list .p-postList__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+  padding: 2px 0;
+}
+
+.kaedoki-rank-list .p-postList__meta {
+  display: contents;
+}
+
+.kaedoki-rank-list .p-postList__cat {
+  order: 1;
+  display: inline-block;
+  margin: 0;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+  background: var(--color_main);
+  border-radius: 4px;
+}
+
+.kaedoki-rank-list .p-postList__title {
+  order: 2;
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+  color: var(--color_text);
+}
+
+.kaedoki-rank-list .p-postList__excerpt {
+  order: 3;
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--kaedoki-muted);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.kaedoki-rank-list .p-postList__times {
+  order: 4;
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: var(--kaedoki-muted);
+}
+
+/* 順位バッジ（第1〜3位メダル／アイキャッチサイズは変更しない） */
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(-n+3)::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 8px;
+  z-index: 3;
+  width: 52px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(1)::before {
+  background-image: url("assets/rank-badges/rank-1.png");
+}
+
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(2)::before {
+  background-image: url("assets/rank-badges/rank-2.png");
+}
+
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(3)::before {
+  background-image: url("assets/rank-badges/rank-3.png");
+}
+
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(4)::before,
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  height: 28px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  background: var(--kaedoki-muted);
+  border-radius: 4px;
+}
+
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(4)::before { content: "4位"; }
+.kaedoki-rank-list .p-postList > .p-postList__item:nth-child(5)::before { content: "5位"; }
+
+@media (max-width: 767px) {
+  .kaedoki-rank-list .p-postList__link {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px !important;
+  }
+
+  .kaedoki-rank-list .p-postList__thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .kaedoki-rank-list .p-postList__body {
+    padding: 0 2px 2px;
+  }
+
+  .kaedoki-rank-list .p-postList__title {
+    font-size: 0.92rem !important;
+  }
+
+  .kaedoki-rank-list .p-postList__excerpt {
+    -webkit-line-clamp: 3;
+  }
+
+  .kaedoki-rank-list .p-postList > .p-postList__item:nth-child(-n+3)::before {
+    top: 0;
+    left: 8px;
+    width: 44px;
+    height: 60px;
+  }
+
+  .kaedoki-rank-head h2,
+  .kaedoki-rank-head .wp-block-heading {
+    font-size: 0.95rem !important;
+    padding: 0.5em 0.9em !important;
+  }
+}
+
+.kaedoki-sim {
+  background: #fff;
+  border: 2px solid var(--kaedoki-yellow);
+  border-radius: 12px;
+  padding: 20px 24px !important;
+  margin: 2rem 0 1rem;
+  gap: 16px;
+  align-items: center !important;
+}
+
+.kaedoki-sim__copy {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.kaedoki-sim h2 {
+  margin: 0 0 0.35em !important;
+}
+
+.kaedoki-sim p {
+  margin: 0 !important;
+}
+
+.kaedoki-soon {
+  display: inline-block;
+  margin-top: 0.6em !important;
+  background: var(--kaedoki-kinari);
+  color: var(--color_main);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.kaedoki-sim-btn {
+  margin: 0.85em 0 0 !important;
+}
+
+.kaedoki-sim__illust {
+  flex: 0 0 auto;
+  margin: 0 !important;
+  width: min(180px, 36vw);
+}
+
+.kaedoki-sim__illust img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .kaedoki-sim {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .kaedoki-sim__illust {
+    width: min(140px, 42vw);
+    align-self: flex-end;
+  }
+}
+
+.l-footer__operator {
+  text-align: center;
+  color: var(--kaedoki-muted);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+}
+
+.kaedoki-btn-yellow,
+a.kaedoki-btn-yellow {
+  background: var(--kaedoki-yellow) !important;
+  color: var(--color_text) !important;
+  border-color: var(--kaedoki-yellow) !important;
+}
+
+/* CTA / ボタン */
+.c-btn,
+.wp-block-button__link {
+  border-radius: 8px !important;
+}
+
+.kaedoki-more {
+  margin-top: 0.5rem !important;
+}
+
+.kaedoki-more .c-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: min(100%, 320px);
+  padding: 14px 28px !important;
+  border: 2px solid var(--color_main) !important;
+  background: var(--color_main) !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+}
+
+.kaedoki-more .c-btn::after {
+  content: "→";
+  font-weight: 700;
+}
+
+.kaedoki-more .c-btn:hover,
+.kaedoki-more .c-btn:focus-visible {
+  background: #9e3f08 !important;
+  border-color: #9e3f08 !important;
+  color: #fff !important;
+}
+
+/* 投稿リストの角を少し柔らかく */
+.p-postList__item {
+  border-radius: 10px;
+}
+
+/* フッター（カナエル型：明るい帯＋ナビ） */
+.l-footer {
+  background: var(--kaedoki-kinari);
+  color: var(--color_text);
+}
+
+.l-footer a {
+  color: inherit;
+}
+
+.l-footer__widgetArea {
+  text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.l-footer__widgetArea .widget_media_image img {
+  width: 140px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.l-footer__nav {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+}
+
+.l-footer .copyright {
+  color: var(--kaedoki-muted);
+}
+
+/* 記事スライダー（MV直下） */
+#post_slider {
+  background: transparent;
+}
+
+/* カテゴリタブ（カナエル型 balloon） */
+.swell-block-tab.is-style-balloon {
+  margin-bottom: 2rem;
+}
+
+.swell-block-tab.is-style-balloon .c-tabList__button[aria-selected="true"] {
+  background: var(--color_main);
+  color: #fff;
+}
+
+.swell-block-tab .p-postList.-type-list .p-postList__excerpt {
+  color: var(--kaedoki-muted);
+  margin-top: 0.5em;
+  line-height: 1.7;
+}
+
+/* 見出しの丸ゴシック感 */
+.wp-block-heading,
+.c-pageTitle,
+.c-postTitle,
+.p-articleMetas .c-postTitle {
+  font-family: "M PLUS Rounded 1c", "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
