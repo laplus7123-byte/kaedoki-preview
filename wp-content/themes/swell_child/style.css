@@ -820,3 +820,316 @@ body.has-fix-btm {
   font-weight: 700;
   font-size: 0.85rem;
 }
+
+/* ===== 記事ページ（ワイヤー準拠） ===== */
+.kaedoki-pr {
+  display: inline-block;
+  margin: 0 0 0.75rem !important;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--kaedoki-muted);
+  border-radius: 4px;
+}
+
+.kaedoki-lead {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0 0 1.25rem !important;
+}
+
+.kaedoki-supervisor {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 1.25rem 0 1.5rem !important;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--kaedoki-line);
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+
+.kaedoki-supervisor__icon {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  margin: 0 !important;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--kaedoki-kinari);
+  border: 1px solid var(--kaedoki-line);
+}
+
+.kaedoki-supervisor__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kaedoki-supervisor__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.kaedoki-supervisor__label {
+  margin: 0 0 0.25rem !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--kaedoki-muted);
+}
+
+.kaedoki-supervisor__name {
+  margin: 0 0 0.2rem !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color_text);
+  font-family: "M PLUS Rounded 1c", "Hiragino Sans", sans-serif;
+}
+
+.kaedoki-supervisor__role {
+  margin: 0 !important;
+  font-size: 0.88rem;
+  color: var(--kaedoki-muted);
+  line-height: 1.55;
+}
+
+.kaedoki-conclusion {
+  margin: 1.5rem 0 !important;
+  padding: 18px 20px;
+  background: var(--kaedoki-kinari);
+  border: 1px solid var(--kaedoki-line);
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+
+.kaedoki-conclusion__title {
+  margin: 0 0 0.6rem !important;
+  padding: 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--color_text) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--color_main) !important;
+  display: inline-block;
+  line-height: 1.4 !important;
+}
+
+.kaedoki-conclusion__title::before {
+  display: none !important;
+}
+
+.kaedoki-conclusion p {
+  margin: 0 0 0.55em !important;
+  color: var(--color_text);
+  line-height: 1.75;
+}
+
+.kaedoki-conclusion p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.kaedoki-kaede-note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 1.25rem 0 !important;
+}
+
+.kaedoki-kaede-note__icon {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  margin: 0 !important;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--kaedoki-line);
+  background: var(--kaedoki-kinari);
+}
+
+.kaedoki-kaede-note__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kaedoki-kaede-note__text {
+  flex: 1 1 auto;
+  margin: 0 !important;
+  padding: 12px 16px;
+  background: var(--kaedoki-kinari);
+  border-radius: 14px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+/* 記事H2は橙帯（トップの下線見出しと役割分け） */
+.single .post_content h2.wp-block-heading,
+.single-post .post_content h2 {
+  background: var(--color_main) !important;
+  color: #fff !important;
+  padding: 0.7em 1em !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 1px solid var(--color_main);
+  outline-offset: 3px;
+  box-shadow: none !important;
+  font-size: 1.1rem !important;
+  line-height: 1.45 !important;
+}
+
+.single .post_content h2.wp-block-heading::before,
+.single-post .post_content h2::before {
+  display: none !important;
+}
+
+.kaedoki-cta {
+  margin: 1.5rem 0 !important;
+  text-align: center;
+}
+
+.kaedoki-cta .c-btn,
+a.kaedoki-cta-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: min(100%, 360px);
+  padding: 16px 28px !important;
+  border: 2px solid var(--kaedoki-yellow) !important;
+  background: var(--kaedoki-yellow) !important;
+  color: var(--color_text) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.kaedoki-cta .c-btn:hover,
+a.kaedoki-cta-btn:hover,
+.kaedoki-cta .c-btn:focus-visible,
+a.kaedoki-cta-btn:focus-visible {
+  background: #f0b820 !important;
+  border-color: #f0b820 !important;
+  color: var(--color_text) !important;
+}
+
+.kaedoki-survey {
+  margin: 2rem 0 !important;
+  padding: 20px 20px 16px;
+  background: #fff;
+  border: 1px solid var(--kaedoki-line);
+  border-radius: 12px;
+  box-shadow: none !important;
+}
+
+.kaedoki-survey__title {
+  margin: 0 0 0.35rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--color_text) !important;
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  outline: none !important;
+}
+
+.kaedoki-survey__title::before {
+  display: none !important;
+}
+
+.kaedoki-survey__lead {
+  margin: 0 0 1rem !important;
+  color: var(--kaedoki-muted);
+  font-size: 0.92rem;
+}
+
+.kaedoki-survey__q {
+  margin: 0 0 0.75rem !important;
+  font-weight: 700;
+}
+
+.kaedoki-survey__choices {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.kaedoki-survey__choices li {
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--kaedoki-kinari);
+  border: 1px solid var(--kaedoki-line);
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--color_text);
+}
+
+.kaedoki-survey__note {
+  margin: 0.75rem 0 0 !important;
+  font-size: 0.82rem;
+  color: var(--kaedoki-muted);
+}
+
+.kaedoki-next {
+  margin: 2rem 0 1rem !important;
+  padding: 18px 20px;
+  background: var(--kaedoki-kinari);
+  border-radius: 12px;
+  border: 1px solid var(--kaedoki-line);
+}
+
+.kaedoki-next__label {
+  margin: 0 0 0.35rem !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--kaedoki-muted);
+}
+
+.kaedoki-next a {
+  font-weight: 700;
+  color: var(--color_main) !important;
+  text-decoration: none !important;
+}
+
+.kaedoki-next a:hover {
+  text-decoration: underline !important;
+}
+
+@media (max-width: 767px) {
+  .kaedoki-supervisor {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .kaedoki-supervisor__icon {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .kaedoki-conclusion {
+    padding: 14px 16px;
+  }
+
+  .kaedoki-survey {
+    padding: 16px 14px 12px;
+  }
+
+  a.kaedoki-cta-btn,
+  .kaedoki-cta .c-btn {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 18px !important;
+    font-size: 0.98rem !important;
+  }
+}
